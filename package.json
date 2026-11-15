@@ -1,0 +1,23 @@
+{
+  "name": "harbour-security-lab",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "description": "Authorized, non-destructive Harbour/DBF security lab with loopback-only validation.",
+  "type": "module",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "build": "tsc",
+    "test": "npm run build && node --test --experimental-test-coverage --test-coverage-include=dist/**/*.js tests/*.test.mjs",
+    "probe": "node dist/cli.js",
+    "review:public": "node scripts/review-public.mjs",
+    "validate:local": "node scripts/validate-local.mjs"
+  },
+  "devDependencies": {
+    "typescript": "5.9.3",
+    "@types/node": "24"
+  }
+}

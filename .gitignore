@@ -1,0 +1,41 @@
+# Dependências e artefatos locais
+node_modules/
+dist/
+coverage/
+*.tsbuildinfo
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# Configuração privada / credenciais
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.pfx
+*.p12
+*.log
+
+# Dados DBF, memos e índices: nunca versionar por padrão
+*.[dD][bB][fF]
+*.[fF][pP][tT]
+*.[dD][bB][tT]
+*.[cC][dD][xX]
+*.[nN][tT][xX]
+
+# All historical/local reports stay private; never add with git add -f.
+/evidence/*
+!/evidence/README.md
+/reports/
+
+# Configuração local e temporários
+/config/*.local.*
+*.tmp
+*.bak
+*.tgz
+.npm/
+.DS_Store
+Thumbs.db

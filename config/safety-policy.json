@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "1.0",
+  "status": "documentation-only-runtime-scope-is-authoritative",
+  "profile": "checkpoint3-loopback",
+  "networkEnabled": false,
+  "authorizedTargets": [],
+  "allowedAddresses": ["127.0.0.1"],
+  "defaults": {
+    "connectTimeoutMs": 3000,
+    "dnsTimeoutMs": 3000,
+    "httpTimeoutMs": 5000,
+    "maxResponseBytes": 1048576,
+    "maxConcurrency": 1,
+    "automaticRetries": 0,
+    "followRedirects": false
+  },
+  "requirements": [
+    "Operator approval plus exact hostname, numeric address and individual port authorization.",
+    "Checkpoint 3 is loopback only. Remote execution requires a separately reviewed implementation gate.",
+    "No upstream DNS queries. localhost is mapped locally; DNS answer/error/deadline handling is tested with mocks.",
+    "Reject entire resolver answers containing any address outside scope; connect to pinned numeric addresses.",
+    "Never follow HTTP redirects or retain response bodies, authentication headers or cookies.",
+    "Keep integration API findings separate from Harbour/DBF findings."
+  ]
+}
